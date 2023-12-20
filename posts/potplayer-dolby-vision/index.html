@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>享受高质量画面：使用PotPlayer播放杜比视界影片的简易指南 - 青橙日志 | 个人博客</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="青橙日志 | 个人博客"><meta name="msapplication-TileImage" content="/img/apple-touch-icon.jpg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="青橙日志 | 个人博客"><meta name="apple-mobile-web-app-status-bar-style" content="default"><link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.jpg"><link rel="apple-touch-icon" sizes="192x192" href="/img/favicon.jpg"><link rel="apple-touch-icon" sizes="128x128" href="/img/favicon.ico"><meta name="description" content="PotPlayer 主要是一款播放器，以其丰富的功能和灵活性而闻名。然而，PotPlayer 并不直接支持 Dolby Vision。Dolby Vision 支持通常需要硬件和软件之间的集成，以便能够正确解码和显示 Dolby Vision 格式的内容……"><meta property="og:type" content="blog"><meta property="og:title" content="青橙日志 | 个人博客"><meta property="og:url" content="https://blog.webrelay.cn/"><meta property="og:site_name" content="青橙日志"><meta property="og:description" content="PotPlayer 主要是一款播放器，以其丰富的功能和灵活性而闻名。然而，PotPlayer 并不直接支持 Dolby Vision。Dolby Vision 支持通常需要硬件和软件之间的集成，以便能够正确解码和显示 Dolby Vision 格式的内容……"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://blog.webrelay.cn/img/favicon.png"><meta property="article:published_time" content="2023-12-16T15:26:50.000Z"><meta property="article:modified_time" content="2023-12-20T08:45:39.126Z"><meta property="article:author" content="青橙"><meta property="article:tag" content="影视"><meta property="article:tag" content="PotPlayer"><meta property="article:tag" content="杜比视界"><meta property="article:tag" content="MPC Video Renderer"><meta property="article:tag" content="LAVFilters"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://blog.webrelay.cn/img/favicon.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.webrelay.cn/"},"headline":"青橙日志 | 个人博客","image":["https://blog.webrelay.cn/img/favicon.png"],"datePublished":"2023-12-16T15:26:50.000Z","dateModified":"2023-12-20T08:45:39.126Z","author":{"@type":"Person","name":"青橙"},"publisher":{"@type":"Organization","name":"青橙","logo":{"@type":"ImageObject","url":"https://blog.webrelay.cn/img/avatar.jpg"}},"description":"PotPlayer 主要是一款播放器，以其丰富的功能和灵活性而闻名。然而，PotPlayer 并不直接支持 Dolby Vision。Dolby Vision 支持通常需要硬件和软件之间的集成，以便能够正确解码和显示 Dolby Vision 格式的内容……"}</script><link rel="canonical" href="https://blog.webrelay.cn/posts/potplayer-dolby-vision/"><link rel="alternate" href="/atom.xml" title="青橙日志 | 个人博客" type="application/atom+xml"><link rel="icon" href="/img/favicon.ico"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-dark.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.png" alt="青橙日志 | 个人博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/orangelegy/orangelegy.github.io"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-12-16T15:26:50.000Z" title="2023/12/16 23:26:50">2023-12-16</time>发表</span><span class="level-item"><time dateTime="2023-12-20T08:45:39.126Z" title="2023/12/20 16:45:39">2023-12-20</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%95%99%E7%A8%8B/">教程</a></span><span class="level-item">5 分钟读完 (大约735个字)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">享受高质量画面：使用PotPlayer播放杜比视界影片的简易指南</h1><div class="content"><p>PotPlayer 主要是一款播放器，以其丰富的功能和灵活性而闻名。然而，PotPlayer 并不直接支持 Dolby Vision。Dolby Vision 支持通常需要硬件和软件之间的集成，以便能够正确解码和显示 Dolby Vision 格式的内容。</p>
+<p>如下图，不支持杜比视界的影片通常呈现紫色和绿色，就像开了红绿色盲滤镜。下面就教大家如何配置PotPlayer播放杜比视界片源。</p>
+<h2 id="效果对比"><a href="#效果对比" class="headerlink" title="效果对比"></a>效果对比</h2><p>设置前：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/orangelegy/pic/img/image-20231216234227127.png"></p>
+<p>设置后：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/orangelegy/pic/img/image-20231216234706574.png"></p>
+<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>点击链接下载并安装以下软件：</p>
+<ol>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Aleksoid1978/VideoRenderer/releases/">MPC Video Renderer</a> </p>
+<p>一款基于 Microsoft Direct3D 的视频渲染器，通常与播放器软件（如Media Player Classic）一起使用。它提供高质量的视频渲染和处理，支持硬件加速，并具有自定义配置选项</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Nevcairiel/LAVFilters/releases">LAVFilters</a></p>
+<p>一套开源的DirectShow滤镜套件，为Windows上的多媒体播放器提供音频和视频解码支持。它支持多种常见的音视频格式，提供高质量的解码性能</p>
+</li>
+</ol>
+<h2 id="配置方法"><a href="#配置方法" class="headerlink" title="配置方法"></a>配置方法</h2><ul>
+<li><p>一键配置</p>
+<ol>
+<li>下载PotPlayer一键配置文件：<a target="_blank" rel="noopener" href="https://www.alipan.com/s/EeXfrL6XvYy">https://www.alipan.com/s/EeXfrL6XvYy</a></li>
+<li>先关闭PotPlayer</li>
+<li>再双击打开配置文件 - 点击<code>是</code>导入PotPlayer配置</li>
+<li>打开PotPlayer测试</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/orangelegy/pic/img/image-20231217000649186.png"></p>
+</li>
+<li><p>手动配置</p>
+<p>以防万一，如果配置文件没用可以尝试手动配置。步骤比较繁琐，而且缺一不可，虽然技术难度不高，还是更推荐一键配置。</p>
+<ol>
+<li><p>点击左上角&#x2F;右键&#x2F;按F5，打开主菜单再点击<code>选项</code>打开选项菜单</p>
+</li>
+<li><p><code>视频</code>-<code>视频渲染器</code>，选择刚刚安装好的<code>MPC视频渲染器</code>。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/orangelegy/pic/img/image-20231217001715072.png"></p>
+</li>
+<li><p><code>视频</code>-<code>像素着色器</code>，取消所有勾选。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/orangelegy/pic/img/image-20231217002325043.png"></p>
+</li>
+<li><p><code>基本</code>-<code>进阶皮肤</code>-<code>在画面上输出皮肤</code>-<code>方式</code>，选择<code>窗口化图层</code>。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/orangelegy/pic/img/image-20231217003957596.png"></p>
+</li>
+<li><p><code>滤镜</code>-<code>内置图像处理滤镜设置</code>-<code>激活条件</code>，选择<code>不使用</code>。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/orangelegy/pic/img/image-20231217004045698.png"></p>
+</li>
+<li><p><code>滤镜</code>-<code>视频解码器</code>-<code>滤镜/解码器管理</code>-<code>添加系统滤镜</code>，选择<code>LAV Video Decoder</code>和<code>LAV Audio Decoder</code>(可选)，确定。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/orangelegy/pic/img/image-20231217004221926.png"></p>
+</li>
+<li><p><code>滤镜</code>-<code>视频解码器</code>，所有格式能选<code>LAV Video Decoder</code>的都选上，音频解码器同理。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/orangelegy/pic/img/image-20231217003927102.png"></p>
+</li>
+<li><p>重启PotPlayer，播放杜比片源测试。</p>
+</li>
+</ol>
+</li>
+</ul>
+<hr>
+<blockquote>
+<p>相关链接：</p>
+<p><a target="_blank" rel="noopener" href="http://www.potplayercn.com/course/potplayer-mpcvideorenderer-olbyvision.html">PotPlayer安装MPC Video Renderer 播放杜比视界视频</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/Aleksoid1978/VideoRenderer/releases">MPC Video Renderer Releases</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/Nevcairiel/LAVFilters/releases">LAVFilters</a></p>
+</blockquote>
+</div><div class="article-licensing box"><div class="licensing-title"><p>享受高质量画面：使用PotPlayer播放杜比视界影片的简易指南</p><p><a href="https://blog.webrelay.cn/posts/potplayer-dolby-vision/">https://blog.webrelay.cn/posts/potplayer-dolby-vision/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>青橙</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2023-12-16</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2023-12-20</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/%E5%BD%B1%E8%A7%86/">影视</a><a class="link-muted mr-2" rel="tag" href="/tags/PotPlayer/">PotPlayer</a><a class="link-muted mr-2" rel="tag" href="/tags/%E6%9D%9C%E6%AF%94%E8%A7%86%E7%95%8C/">杜比视界</a><a class="link-muted mr-2" rel="tag" href="/tags/MPC-Video-Renderer/">MPC Video Renderer</a><a class="link-muted mr-2" rel="tag" href="/tags/LAVFilters/">LAVFilters</a></div><div class="sharethis-inline-share-buttons"></div><script src="https://platform-api.sharethis.com/js/sharethis.js#property=65829b525cb4e300199aab28&amp;product=sop" defer></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="/img/alipay.jpg" alt="支付宝"></span></a><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/img/wechatpay.png" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/posts/alist/"><span class="level-item">畅享4K：PotPlayer+Alist免费在线观看阿里云盘影片资源</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="content twikoo" id="twikoo"></div><script src="https://cdn.jsdelivr.net/npm/twikoo@1.6.6/dist/twikoo.all.min.js"></script><script>twikoo.init({
+            envId: 'https://blog.webrelay.cn/',
+            region: "ap-guangzhou",
+            lang: "zh-CN",
+        });</script></div></div></div><!--!--><div class="column column-right is-4-tablet is-4-desktop is-4-widescreen  order-3 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#效果对比"><span class="level-left"><span class="level-item">1</span><span class="level-item">效果对比</span></span></a></li><li><a class="level is-mobile" href="#安装环境"><span class="level-left"><span class="level-item">2</span><span class="level-item">安装环境</span></span></a></li><li><a class="level is-mobile" href="#配置方法"><span class="level-left"><span class="level-item">3</span><span class="level-item">配置方法</span></span></a></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-12-16T15:26:50.000Z">2023-12-16</time></p><p class="title"><a href="/posts/potplayer-dolby-vision/">享受高质量画面：使用PotPlayer播放杜比视界影片的简易指南</a></p><p class="categories"><a href="/categories/%E6%95%99%E7%A8%8B/">教程</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-11-29T12:37:21.000Z">2023-11-29</time></p><p class="title"><a href="/posts/alist/">畅享4K：PotPlayer+Alist免费在线观看阿里云盘影片资源</a></p><p class="categories"><a href="/categories/%E6%95%99%E7%A8%8B/">教程</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-11-23T11:20:59.000Z">2023-11-23</time></p><p class="title"><a href="/posts/web-font/">网页设计中的字体艺术：解密字体选择与Web字体优化</a></p><p class="categories"><a href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-04-21T11:55:00.000Z">2023-04-21</time></p><p class="title"><a href="/posts/minecraft-server/">搭建Minecraft游戏服务器：使用MCSManager轻松实现</a></p><p class="categories"><a href="/categories/%E6%95%99%E7%A8%8B/">教程</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-04-16T11:51:52.000Z">2023-04-16</time></p><p class="title"><a href="/posts/giscus/">Hexo博客教程：使用giscus为网页添加评论系统通用方法</a></p><p class="categories"><a href="/categories/%E6%95%99%E7%A8%8B/">教程</a></p></div></article></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/%E5%89%8D%E7%AB%AF/"><span class="level-start"><span class="level-item">前端</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%95%99%E7%A8%8B/"><span class="level-start"><span class="level-item">教程</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Alist/"><span class="tag">Alist</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/CSS/"><span class="tag">CSS</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Hexo/"><span class="tag">Hexo</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/LAVFilters/"><span class="tag">LAVFilters</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/MPC-Video-Renderer/"><span class="tag">MPC Video Renderer</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/PotPlayer/"><span class="tag">PotPlayer</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/WebDAV/"><span class="tag">WebDAV</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/giscus/"><span class="tag">giscus</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/java/"><span class="tag">java</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/mcsmanager/"><span class="tag">mcsmanager</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/minecraft/"><span class="tag">minecraft</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%8D%9A%E5%AE%A2/"><span class="tag">博客</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%AD%97%E4%BD%93/"><span class="tag">字体</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%BD%B1%E8%A7%86/"><span class="tag">影视</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%8F%92%E4%BB%B6/"><span class="tag">插件</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"><span class="tag">服务器</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%9D%9C%E6%AF%94%E8%A7%86%E7%95%8C/"><span class="tag">杜比视界</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%B8%B8%E6%88%8F/"><span class="tag">游戏</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%9F%A5%E8%AF%86/"><span class="tag">知识</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%AC%94%E8%AE%B0/"><span class="tag">笔记</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BD%91%E7%BB%9C/"><span class="tag">网络</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%AF%84%E8%AE%BA/"><span class="tag">评论</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%BD%AF%E4%BB%B6/"><span class="tag">软件</span><span class="tag">1</span></a></div></div></div></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2023/"><span class="level-start"><span class="level-item">2023</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li></ul></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.png" alt="青橙日志 | 个人博客" height="28"></a><p class="is-size-7"><span>&copy; 2023 青橙</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/">皖ICP备2022012932号-2</a> <br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客</span></p><p class="is-size-7">用爱发电</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: true,
+        position: "bottom-right",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/mhchem.min.js" defer></script><script>window.addEventListener("load", function() {
+            document.querySelectorAll('[role="article"] > .content').forEach(function(element) {
+                renderMathInElement(element);
+            });
+        });</script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>

@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>网页设计中的字体艺术：解密字体选择与Web字体优化 - 青橙日志 | 个人博客</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="青橙日志 | 个人博客"><meta name="msapplication-TileImage" content="/img/apple-touch-icon.jpg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="青橙日志 | 个人博客"><meta name="apple-mobile-web-app-status-bar-style" content="default"><link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.jpg"><link rel="apple-touch-icon" sizes="192x192" href="/img/favicon.jpg"><link rel="apple-touch-icon" sizes="128x128" href="/img/favicon.ico"><meta name="description" content="在网页设计的世界中，字体是一种强大的表达工具，能够赋予文字以独特的风格、情感和身份。随着互联网的不断发展，网页字体的选择和优化变得至关重要，直接影响用户体验和网站整体的视觉吸引力……"><meta property="og:type" content="blog"><meta property="og:title" content="青橙日志 | 个人博客"><meta property="og:url" content="https://blog.webrelay.cn/"><meta property="og:site_name" content="青橙日志"><meta property="og:description" content="在网页设计的世界中，字体是一种强大的表达工具，能够赋予文字以独特的风格、情感和身份。随着互联网的不断发展，网页字体的选择和优化变得至关重要，直接影响用户体验和网站整体的视觉吸引力……"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://blog.webrelay.cn/img/favicon.png"><meta property="article:published_time" content="2023-11-23T11:20:59.000Z"><meta property="article:modified_time" content="2023-12-20T08:45:33.510Z"><meta property="article:author" content="青橙"><meta property="article:tag" content="笔记"><meta property="article:tag" content="CSS"><meta property="article:tag" content="字体"><meta property="article:tag" content="知识"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://blog.webrelay.cn/img/favicon.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.webrelay.cn/"},"headline":"青橙日志 | 个人博客","image":["https://blog.webrelay.cn/img/favicon.png"],"datePublished":"2023-11-23T11:20:59.000Z","dateModified":"2023-12-20T08:45:33.510Z","author":{"@type":"Person","name":"青橙"},"publisher":{"@type":"Organization","name":"青橙","logo":{"@type":"ImageObject","url":"https://blog.webrelay.cn/img/avatar.jpg"}},"description":"在网页设计的世界中，字体是一种强大的表达工具，能够赋予文字以独特的风格、情感和身份。随着互联网的不断发展，网页字体的选择和优化变得至关重要，直接影响用户体验和网站整体的视觉吸引力……"}</script><link rel="canonical" href="https://blog.webrelay.cn/posts/web-font/"><link rel="alternate" href="/atom.xml" title="青橙日志 | 个人博客" type="application/atom+xml"><link rel="icon" href="/img/favicon.ico"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-dark.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.png" alt="青橙日志 | 个人博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/orangelegy/orangelegy.github.io"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-23T11:20:59.000Z" title="2023/11/23 19:20:59">2023-11-23</time>发表</span><span class="level-item"><time dateTime="2023-12-20T08:45:33.510Z" title="2023/12/20 16:45:33">2023-12-20</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></span><span class="level-item">22 分钟读完 (大约3281个字)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">网页设计中的字体艺术：解密字体选择与Web字体优化</h1><div class="content"><p>在网页设计的世界中，字体是一种强大的表达工具，能够赋予文字以独特的风格、情感和身份。随着互联网的不断发展，网页字体的选择和优化变得至关重要，直接影响用户体验和网站整体的视觉吸引力。</p>
+<p>这就引出了一个重要问题：在网页上使用什么样的字体？如何确保字体在不同设备和浏览器中都能呈现出最佳效果？本文将带你深入探讨网页字体的世界，从字体的基础知识到Web字体的应用，揭示字体背后的艺术和科学。</p>
+<p>无论你是一位网页设计师、开发者，还是对字体设计感兴趣的普通用户，通过这篇科普博客，你将对网页字体有一个更全面的了解，并学到如何选择、应用和优化字体以提升网站的视觉吸引力。</p>
+<h2 id="font-family字体族"><a href="#font-family字体族" class="headerlink" title="font-family字体族"></a><code>font-family</code>字体族</h2><p>字体族（font family）是一组字体的集合，它包括相似风格和设计的字体。在 CSS 中，可以使用 <code>font-family</code> 属性来指定字体族。当指定字体族时，浏览器会按照优先级选择用户设备上可用的字体。下面是常见的字体族及其在具体设计上的特点：</p>
+<h3 id="1-serif-字体族"><a href="#1-serif-字体族" class="headerlink" title="1. serif 字体族"></a>1. <code>serif</code> 字体族</h3><ul>
+<li><p><strong>特点：</strong> <code>serif</code> 字体具有衬线，衬线是在字符的末端添加的额外笔画，如 “Times New Roman” 中的 “T” 的底部。</p>
+</li>
+<li><p><strong>示例：</strong> Times New Roman, Georgia, Palatino</p>
+</li>
+<li><p><strong>用途：</strong> 适合正式文档和印刷品，因为衬线有助于提高可读性。</p>
+<p><img src="https://rndrr.fonts.net/fonts/font_rend.php?id=13c4de5b08b4d39096ba719b2aa26754&rs=64&bg=ffffff&fg=333333&rt=The%20quick%20brown%20fox%20jumps%20over%20the%20lazy%20dog.%20The%20quick%20brown%20fox%20jumps%20over%20the%20lazy%20dog.&w=1519"></p>
+</li>
+</ul>
+<h3 id="2-sans-serif-字体族"><a href="#2-sans-serif-字体族" class="headerlink" title="2. sans-serif 字体族"></a>2. <code>sans-serif</code> 字体族</h3><ul>
+<li><p><strong>特点：</strong> <code>sans-serif</code> 字体没有衬线，字符的末端是直的。</p>
+</li>
+<li><p><strong>示例：</strong> Arial, Helvetica, Verdana</p>
+</li>
+<li><p><strong>用途：</strong> 适合屏幕显示，特别是小字体大小下更易阅读。</p>
+<p><img src="https://rndrr.fonts.net/fonts/font_rend.php?id=07656e4df3019bfa228039969b19864d&rs=64&bg=ffffff&fg=333333&rt=The%20quick%20brown%20fox%20jumps%20over%20the%20lazy%20dog.%20The%20quick%20brown%20fox%20jumps%20over%20the%20lazy%20dog.&w=1519"></p>
+</li>
+</ul>
+<h3 id="3-monospace-字体族"><a href="#3-monospace-字体族" class="headerlink" title="3. monospace 字体族"></a>3. <code>monospace</code> 字体族</h3><ul>
+<li><p><strong>特点：</strong> <code>monospace</code> 字体中的每个字符都具有相同的宽度，适合排列文本以保持字符对齐。</p>
+</li>
+<li><p><strong>示例：</strong> Courier New, Monaco, Consolas</p>
+</li>
+<li><p><strong>用途：</strong> 适合用于编程代码和等宽排列文本的场合。</p>
+<p><img src="https://rndrr.fonts.net/fonts/font_rend.php?id=7f87a738c77369610124ca8741da2ff0&rs=64&bg=ffffff&fg=333333&rt=The%20quick%20brown%20fox%20jumps%20over%20the%20lazy%20dog.%20The%20quick%20brown%20fox%20jumps%20over%20the%20lazy%20dog.&w=1519"></p>
+</li>
+</ul>
+<h3 id="4-cursive-字体族"><a href="#4-cursive-字体族" class="headerlink" title="4. cursive 字体族"></a>4. <code>cursive</code> 字体族</h3><ul>
+<li><p><strong>特点：</strong> <code>cursive</code> 字体模仿手写风格，通常包含连写的字符。</p>
+</li>
+<li><p><strong>示例：</strong> Comic Sans MS, Brush Script</p>
+</li>
+<li><p><strong>用途：</strong> 适合强调和创意性的场合，但不适合正式文档。</p>
+<p><img src="https://rndrr.fonts.net/fonts/font_rend.php?id=e67ca505ce882efd7cdcf2fa77b3ce6a&rs=64&bg=ffffff&fg=333333&rt=The%20quick%20brown%20fox%20jumps%20over%20the%20lazy%20dog.%20The%20quick%20brown%20fox%20jumps%20over%20the%20lazy%20dog.&w=1519"></p>
+</li>
+</ul>
+<h3 id="5-fantasy-字体族"><a href="#5-fantasy-字体族" class="headerlink" title="5. fantasy 字体族"></a>5. <code>fantasy</code> 字体族</h3><ul>
+<li><p><strong>特点：</strong> <code>fantasy</code> 字体是一类装饰性的字体，通常不符合常规的字体分类。</p>
+</li>
+<li><p><strong>示例：</strong> Impact, Western</p>
+</li>
+<li><p><strong>用途：</strong> 适合用于标题和特殊效果，不适合大篇幅的正文。</p>
+<p><img src="https://rndrr.fonts.net/fonts/font_rend.php?id=b67225745af2fa76e0ebc8560baca5d5&rs=64&bg=ffffff&fg=333333&rt=The%20quick%20brown%20fox%20jumps%20over%20the%20lazy%20dog.%20The%20quick%20brown%20fox%20jumps%20over%20the%20lazy%20dog.&w=1519"></p>
+</li>
+</ul>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: Arial, Helvetica, <span class="string">&quot;Microsoft YaHei&quot;</span>, sans-serif; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="具体是根据哪款字体来渲染？"><a href="#具体是根据哪款字体来渲染？" class="headerlink" title="具体是根据哪款字体来渲染？"></a>具体是根据哪款字体来渲染？</h3><p>font-family属性可以定义一个或多个字体的名称，用于渲染文本。当使用font-family定义多款字体时，具体使用哪款字体渲染，取决于以下几个因素：</p>
+<ul>
+<li>字体的可用性：浏览器会按照font-family属性的顺序，从左到右，依次尝试使用每个字体。如果浏览器支持并且能够找到第一个字体，就会使用它。如果第一个字体不可用，就会尝试使用第二个字体，以此类推，直到找到一个可用的字体。如果所有的字体都不可用，就会使用浏览器的默认字体。</li>
+<li>字体的匹配度：如果一个字体不能完全覆盖文本中的所有字符，浏览器会尝试使用其他字体来补充缺失的字符。这种情况下，浏览器会根据字体的匹配度，即字体的样式，重量，斜度，等等，来选择最合适的字体。如果没有找到合适的字体，就会使用浏览器的默认字体。</li>
+<li>字体的优先级：如果一个字体是用户在操作系统或浏览器中设置的首选字体，或者是一个通用的字体族，如serif，sans-serif，monospace，等等，它会有更高的优先级，被更容易地使用。如果一个字体是一个特定的字体名称，如Arial，Times New Roman，等等，它会有更低的优先级，被更难地使用。</li>
+</ul>
+<p>因此，当使用font-family定义多款字体时，具体使用哪款字体渲染，是一个动态的过程，需要考虑字体的可用性，匹配度，和优先级。为了保证文本的渲染效果，建议在font-family属性中，既指定特定的字体名称，又指定通用的字体族，以提供更多的备选方案。</p>
+<hr>
+<h2 id="font-weight-字重"><a href="#font-weight-字重" class="headerlink" title="font-weight 字重"></a><code>font-weight</code> 字重</h2><p><code>font-weight</code> 是 CSS 中用于设置字体粗细的属性。它的值可以是以下几种：</p>
+<ul>
+<li><strong>数值：</strong> 100、200、300、400、500、600、700、800、900。数值越大，字体越粗。常见的使用是 <code>normal</code> 对应 400，<code>bold</code> 对应 700。</li>
+<li><strong>关键字：</strong><ul>
+<li><code>normal</code>：定义标准的字符。</li>
+<li><code>bold</code>：定义粗体字符。</li>
+</ul>
+</li>
+<li><strong>全局关键字：</strong><ul>
+<li><code>initial</code>：设置属性为其默认值。</li>
+<li><code>inherit</code>：从父元素继承属性值。</li>
+</ul>
+</li>
+</ul>
+<h3 id="使用示例"><a href="#使用示例" class="headerlink" title="使用示例"></a>使用示例</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 使用关键字 */</span></span><br><span class="line"><span class="selector-class">.normal-text</span> &#123;</span><br><span class="line">  <span class="attribute">font-weight</span>: normal;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.bold-text</span> &#123;</span><br><span class="line">  <span class="attribute">font-weight</span>: bold;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 使用数值 */</span></span><br><span class="line"><span class="selector-class">.light-text</span> &#123;</span><br><span class="line">  <span class="attribute">font-weight</span>: <span class="number">300</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 使用全局关键字 */</span></span><br><span class="line"><span class="selector-class">.default-weight</span> &#123;</span><br><span class="line">  <span class="attribute">font-weight</span>: initial;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 继承父元素的字体粗细 */</span></span><br><span class="line"><span class="selector-class">.inherited-weight</span> &#123;</span><br><span class="line">  <span class="attribute">font-weight</span>: inherit;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在上述示例中，<code>.normal-text</code> 使用 <code>font-weight: normal;</code> 设置为标准字体，<code>.bold-text</code> 使用 <code>font-weight: bold;</code> 设置为粗体，<code>.light-text</code> 使用 <code>font-weight: 300;</code> 设置为较轻的字体。<code>.default-weight</code> 使用 <code>font-weight: initial;</code> 将属性值重置为默认值，而 <code>.inherited-weight</code> 使用 <code>font-weight: inherit;</code> 从父元素继承字体粗细。</p>
+<p>这些设置可以根据设计需要和品牌规范来选择，以确保网页文本的良好可读性和一致性。</p>
+<h3 id="常见粗细值名称和数值对应"><a href="#常见粗细值名称和数值对应" class="headerlink" title="常见粗细值名称和数值对应"></a>常见粗细值名称和数值对应</h3><p>100 到 900 之间的数值大致对应如下的常见粗细值名称：</p>
+<table>
+<thead>
+<tr>
+<th>100</th>
+<th>200</th>
+<th>300</th>
+<th>400</th>
+<th>500</th>
+<th>600</th>
+<th>700</th>
+<th>800</th>
+<th>900</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Thin (Hairline)</td>
+<td>Extra Light (Ultra Light)</td>
+<td>Light</td>
+<td>Normal</td>
+<td>Medium</td>
+<td>Semi Bold (Demi Bold)</td>
+<td>Bold</td>
+<td>Extra Bold (Ultra Bold)</td>
+<td>Black (Heavy)</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>关于<code>Regular</code>的定义</strong></p>
+<p>在 CSS 中，<code>regular</code> 字重并没有一个具体的数值标准，它通常是指字体家族中的默认或普通字重。具体的字体家族和其对应的字重可能有所不同，因为这是由字体设计者和字体提供商决定的。</p>
+<p>一般而言，<code>regular</code> 字重对应于数值 <code>400</code>。在某些字体家族中，<code>regular</code> 也可能对应于 <code>normal</code> 关键字。</p>
+</blockquote>
+<hr>
+<h2 id="font-face-自定义字体"><a href="#font-face-自定义字体" class="headerlink" title="@font-face 自定义字体"></a><code>@font-face</code> 自定义字体</h2><p><code>@font-face</code> 是 CSS 中的一个规则，用于定义自定义字体。通过 <code>@font-face</code> 规则，你可以引入并使用网页上没有安装的字体。这对于网页设计中的字体定制非常有用，可以确保你的网页在用户端正确显示所需的字体。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@font-face</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: <span class="string">&#x27;YourFontName&#x27;</span>; <span class="comment">/* 指定字体的名称，用于后续引用 */</span></span><br><span class="line">  <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">&#x27;path/to/your/font.woff2&#x27;</span>) <span class="built_in">format</span>(<span class="string">&#x27;woff2&#x27;</span>); <span class="comment">/* 字体文件的路径和格式 */</span></span><br><span class="line">  <span class="attribute">font-weight</span>: normal; <span class="comment">/* 字体的粗细，可选值包括 normal、bold 等 */</span></span><br><span class="line">  <span class="attribute">font-style</span>: normal; <span class="comment">/* 字体的风格，可选值包括 normal、italic 等 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="详解"><a href="#详解" class="headerlink" title="详解"></a>详解</h3><ul>
+<li><strong>font-family：</strong> 指定字体的名称，以供后续在 CSS 中使用。这是你在 <code>font-family</code> 属性中引用字体时所使用的名称。</li>
+<li><strong>src：</strong> 指定字体文件的路径和格式。通常，你需要提供字体文件的绝对或相对路径，并指定字体的格式（如 <code>woff2</code>、<code>woff</code>、<code>ttf</code> 等）。可以提供多个 <code>src</code> 声明，以提供备用字体文件，以备不同浏览器和操作系统使用不同的格式。</li>
+<li><strong>font-weight 和 font-style：</strong> 这两个属性是可选的。它们允许你指定字体的粗细和风格。如果没有指定，将使用字体文件中的默认值。</li>
+</ul>
+<h3 id="使用示例-1"><a href="#使用示例-1" class="headerlink" title="使用示例"></a>使用示例</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@font-face</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: <span class="string">&#x27;MyCustomFont&#x27;</span>;</span><br><span class="line">  <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">&#x27;path/to/your/font.woff2&#x27;</span>) <span class="built_in">format</span>(<span class="string">&#x27;woff2&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: <span class="string">&#x27;MyCustomFont&#x27;</span>, sans-serif;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中：</p>
+<ul>
+<li><code>@font-face</code> 规则定义了一个名为 <code>&#39;MyCustomFont&#39;</code> 的自定义字体，它的来源是 <code>&#39;path/to/your/font.woff2&#39;</code> 文件。</li>
+<li>在 <code>body</code> 中，通过 <code>font-family</code> 属性将整个页面的默认字体设置为 <code>&#39;MyCustomFont&#39;</code>。这样，整个页面的文字都会使用这个自定义字体。</li>
+</ul>
+<p>确保替换 <code>&#39;path/to/your/font.woff2&#39;</code> 为你实际字体文件的路径。此外，你可以提供多个字体格式，以提高在不同浏览器和操作系统上的兼容性。</p>
+<hr>
+<h2 id="format-的作用"><a href="#format-的作用" class="headerlink" title="format() 的作用"></a><code>format()</code> 的作用</h2><p><code>format()</code> 是 <code>@font-face</code> 规则中的一个子属性，用于指定字体文件的格式。不同的浏览器和操作系统支持不同的字体文件格式，因此通过 <code>format()</code> 属性，你可以告诉浏览器如何解释字体文件。</p>
+<p>常见的字体文件格式包括 WOFF（Web Open Font Format）、WOFF2（Web Open Font Format 2.0）、TTF（TrueType Font）、OTF（OpenType Font）等。通过提供适当的格式，你可以增加网页在各种设备和浏览器上正确显示字体的机会。</p>
+<h3 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@font-face</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: <span class="string">&#x27;YourFontName&#x27;</span>;</span><br><span class="line">  <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">&#x27;path/to/your/font.woff&#x27;</span>) <span class="built_in">format</span>(<span class="string">&#x27;woff&#x27;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，<code>format(&#39;woff&#39;)</code> 表示字体文件的格式是 WOFF。</p>
+<h3 id="常见的-format-值"><a href="#常见的-format-值" class="headerlink" title="常见的 format 值"></a>常见的 format 值</h3><ul>
+<li><strong><code>format(&#39;woff&#39;)</code>：</strong> WOFF 格式的字体文件。</li>
+<li><strong><code>format(&#39;woff2&#39;)</code>：</strong> WOFF 2.0 格式的字体文件，是 WOFF 的升级版，通常更加高效。</li>
+<li><strong><code>format(&#39;truetype&#39;)</code>：</strong> TrueType 字体文件格式。</li>
+<li><strong><code>format(&#39;opentype&#39;)</code>：</strong> OpenType 字体文件格式。</li>
+<li><strong><code>format(&#39;embedded-opentype&#39;)</code>：</strong> 嵌入式 OpenType 字体文件格式，通常用于旧版 Internet Explorer。</li>
+</ul>
+<h3 id="使用示例-2"><a href="#使用示例-2" class="headerlink" title="使用示例"></a>使用示例</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@font-face</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: <span class="string">&#x27;MyCustomFont&#x27;</span>;</span><br><span class="line">  <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">&#x27;path/to/your/font.woff2&#x27;</span>) <span class="built_in">format</span>(<span class="string">&#x27;woff2&#x27;</span>),</span><br><span class="line">       <span class="built_in">url</span>(<span class="string">&#x27;path/to/your/font.woff&#x27;</span>) <span class="built_in">format</span>(<span class="string">&#x27;woff&#x27;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，<code>@font-face</code> 规则指定了两个字体文件，一个是 WOFF2 格式的，另一个是 WOFF 格式的。浏览器会根据支持的格式选择合适的字体文件来加载。</p>
+<hr>
+<h2 id="字体格式的建议"><a href="#字体格式的建议" class="headerlink" title="字体格式的建议"></a>字体格式的建议</h2><p>在网页开发中，字体有不同的格式，因为不同的浏览器和设备支持不同的字体格式。为了确保字体在各种环境中都能正确加载，通常会使用以下常见的字体格式：</p>
+<ol>
+<li><p><strong>WOFF (Web Open Font Format)：</strong></p>
+<ul>
+<li>WOFF 是专门为 Web 设计的字体格式，提供了压缩和高效的字体传输。绝大多数现代浏览器都支持 WOFF 格式。</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 引入 WOFF 格式的字体 */</span></span><br><span class="line"><span class="keyword">@font-face</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: <span class="string">&#x27;YourFont&#x27;</span>;</span><br><span class="line">  <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">&#x27;your-font.woff&#x27;</span>) <span class="built_in">format</span>(<span class="string">&#x27;woff&#x27;</span>);</span><br><span class="line">  <span class="attribute">font-weight</span>: normal;</span><br><span class="line">  <span class="attribute">font-style</span>: normal;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>WOFF2 (Web Open Font Format 2)：</strong></p>
+<ul>
+<li>WOFF2 是 WOFF 的升级版，具有更好的压缩效果，但它支持的浏览器较少。然而，对于支持的浏览器，WOFF2 是首选的字体格式。</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 引入 WOFF2 格式的字体 */</span></span><br><span class="line"><span class="keyword">@font-face</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: <span class="string">&#x27;YourFont&#x27;</span>;</span><br><span class="line">  <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">&#x27;your-font.woff2&#x27;</span>) <span class="built_in">format</span>(<span class="string">&#x27;woff2&#x27;</span>);</span><br><span class="line">  <span class="attribute">font-weight</span>: normal;</span><br><span class="line">  <span class="attribute">font-style</span>: normal;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>TTF&#x2F;OTF (TrueType&#x2F;OpenType)：</strong></p>
+<ul>
+<li>TTF 和 OTF 是传统的字体格式，适用于许多设备和浏览器。但它们相对于 WOFF 来说文件大小较大，因此在 Web 中使用时可能不如 WOFF&#x2F;WOFF2 效率高。</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 引入 TTF 格式的字体 */</span></span><br><span class="line"><span class="keyword">@font-face</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: <span class="string">&#x27;YourFont&#x27;</span>;</span><br><span class="line">  <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">&#x27;your-font.ttf&#x27;</span>) <span class="built_in">format</span>(<span class="string">&#x27;truetype&#x27;</span>);</span><br><span class="line">  <span class="attribute">font-weight</span>: normal;</span><br><span class="line">  <span class="attribute">font-style</span>: normal;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>在使用字体时，可以使用多个格式，以提供对不同浏览器的更好支持。例如：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@font-face</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: <span class="string">&#x27;YourFont&#x27;</span>;</span><br><span class="line">  <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">&#x27;your-font.woff2&#x27;</span>) <span class="built_in">format</span>(<span class="string">&#x27;woff2&#x27;</span>),</span><br><span class="line">       <span class="built_in">url</span>(<span class="string">&#x27;your-font.woff&#x27;</span>) <span class="built_in">format</span>(<span class="string">&#x27;woff&#x27;</span>),</span><br><span class="line">       <span class="built_in">url</span>(<span class="string">&#x27;your-font.ttf&#x27;</span>) <span class="built_in">format</span>(<span class="string">&#x27;truetype&#x27;</span>);</span><br><span class="line">  <span class="attribute">font-weight</span>: normal;</span><br><span class="line">  <span class="attribute">font-style</span>: normal;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这样，浏览器将根据支持的格式选择合适的字体。确保字体文件在服务器上正确托管，并且在 CSS 中正确引用字体路径。</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>网页设计中的字体艺术：解密字体选择与Web字体优化</p><p><a href="https://blog.webrelay.cn/posts/web-font/">https://blog.webrelay.cn/posts/web-font/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>青橙</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2023-11-23</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2023-12-20</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a><a class="link-muted mr-2" rel="tag" href="/tags/CSS/">CSS</a><a class="link-muted mr-2" rel="tag" href="/tags/%E5%AD%97%E4%BD%93/">字体</a><a class="link-muted mr-2" rel="tag" href="/tags/%E7%9F%A5%E8%AF%86/">知识</a></div><div class="sharethis-inline-share-buttons"></div><script src="https://platform-api.sharethis.com/js/sharethis.js#property=65829b525cb4e300199aab28&amp;product=sop" defer></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="/img/alipay.jpg" alt="支付宝"></span></a><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/img/wechatpay.png" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/posts/alist/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">畅享4K：PotPlayer+Alist免费在线观看阿里云盘影片资源</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/posts/minecraft-server/"><span class="level-item">搭建Minecraft游戏服务器：使用MCSManager轻松实现</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="content twikoo" id="twikoo"></div><script src="https://cdn.jsdelivr.net/npm/twikoo@1.6.6/dist/twikoo.all.min.js"></script><script>twikoo.init({
+            envId: 'https://blog.webrelay.cn/',
+            region: "ap-guangzhou",
+            lang: "zh-CN",
+        });</script></div></div></div><!--!--><div class="column column-right is-4-tablet is-4-desktop is-4-widescreen  order-3 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#font-family字体族"><span class="level-left"><span class="level-item">1</span><span class="level-item">font-family字体族</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#1-serif-字体族"><span class="level-left"><span class="level-item">1.1</span><span class="level-item">1. serif 字体族</span></span></a></li><li><a class="level is-mobile" href="#2-sans-serif-字体族"><span class="level-left"><span class="level-item">1.2</span><span class="level-item">2. sans-serif 字体族</span></span></a></li><li><a class="level is-mobile" href="#3-monospace-字体族"><span class="level-left"><span class="level-item">1.3</span><span class="level-item">3. monospace 字体族</span></span></a></li><li><a class="level is-mobile" href="#4-cursive-字体族"><span class="level-left"><span class="level-item">1.4</span><span class="level-item">4. cursive 字体族</span></span></a></li><li><a class="level is-mobile" href="#5-fantasy-字体族"><span class="level-left"><span class="level-item">1.5</span><span class="level-item">5. fantasy 字体族</span></span></a></li><li><a class="level is-mobile" href="#示例"><span class="level-left"><span class="level-item">1.6</span><span class="level-item">示例</span></span></a></li><li><a class="level is-mobile" href="#具体是根据哪款字体来渲染？"><span class="level-left"><span class="level-item">1.7</span><span class="level-item">具体是根据哪款字体来渲染？</span></span></a></li></ul></li><li><a class="level is-mobile" href="#font-weight-字重"><span class="level-left"><span class="level-item">2</span><span class="level-item">font-weight 字重</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#使用示例"><span class="level-left"><span class="level-item">2.1</span><span class="level-item">使用示例</span></span></a></li><li><a class="level is-mobile" href="#常见粗细值名称和数值对应"><span class="level-left"><span class="level-item">2.2</span><span class="level-item">常见粗细值名称和数值对应</span></span></a></li></ul></li><li><a class="level is-mobile" href="#font-face-自定义字体"><span class="level-left"><span class="level-item">3</span><span class="level-item">@font-face 自定义字体</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#语法"><span class="level-left"><span class="level-item">3.1</span><span class="level-item">语法</span></span></a></li><li><a class="level is-mobile" href="#详解"><span class="level-left"><span class="level-item">3.2</span><span class="level-item">详解</span></span></a></li><li><a class="level is-mobile" href="#使用示例-1"><span class="level-left"><span class="level-item">3.3</span><span class="level-item">使用示例</span></span></a></li></ul></li><li><a class="level is-mobile" href="#format-的作用"><span class="level-left"><span class="level-item">4</span><span class="level-item">format() 的作用</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#语法-1"><span class="level-left"><span class="level-item">4.1</span><span class="level-item">语法</span></span></a></li><li><a class="level is-mobile" href="#常见的-format-值"><span class="level-left"><span class="level-item">4.2</span><span class="level-item">常见的 format 值</span></span></a></li><li><a class="level is-mobile" href="#使用示例-2"><span class="level-left"><span class="level-item">4.3</span><span class="level-item">使用示例</span></span></a></li></ul></li><li><a class="level is-mobile" href="#字体格式的建议"><span class="level-left"><span class="level-item">5</span><span class="level-item">字体格式的建议</span></span></a></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-12-16T15:26:50.000Z">2023-12-16</time></p><p class="title"><a href="/posts/potplayer-dolby-vision/">享受高质量画面：使用PotPlayer播放杜比视界影片的简易指南</a></p><p class="categories"><a href="/categories/%E6%95%99%E7%A8%8B/">教程</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-11-29T12:37:21.000Z">2023-11-29</time></p><p class="title"><a href="/posts/alist/">畅享4K：PotPlayer+Alist免费在线观看阿里云盘影片资源</a></p><p class="categories"><a href="/categories/%E6%95%99%E7%A8%8B/">教程</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-11-23T11:20:59.000Z">2023-11-23</time></p><p class="title"><a href="/posts/web-font/">网页设计中的字体艺术：解密字体选择与Web字体优化</a></p><p class="categories"><a href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-04-21T11:55:00.000Z">2023-04-21</time></p><p class="title"><a href="/posts/minecraft-server/">搭建Minecraft游戏服务器：使用MCSManager轻松实现</a></p><p class="categories"><a href="/categories/%E6%95%99%E7%A8%8B/">教程</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-04-16T11:51:52.000Z">2023-04-16</time></p><p class="title"><a href="/posts/giscus/">Hexo博客教程：使用giscus为网页添加评论系统通用方法</a></p><p class="categories"><a href="/categories/%E6%95%99%E7%A8%8B/">教程</a></p></div></article></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/%E5%89%8D%E7%AB%AF/"><span class="level-start"><span class="level-item">前端</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%95%99%E7%A8%8B/"><span class="level-start"><span class="level-item">教程</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Alist/"><span class="tag">Alist</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/CSS/"><span class="tag">CSS</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Hexo/"><span class="tag">Hexo</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/LAVFilters/"><span class="tag">LAVFilters</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/MPC-Video-Renderer/"><span class="tag">MPC Video Renderer</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/PotPlayer/"><span class="tag">PotPlayer</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/WebDAV/"><span class="tag">WebDAV</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/giscus/"><span class="tag">giscus</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/java/"><span class="tag">java</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/mcsmanager/"><span class="tag">mcsmanager</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/minecraft/"><span class="tag">minecraft</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%8D%9A%E5%AE%A2/"><span class="tag">博客</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%AD%97%E4%BD%93/"><span class="tag">字体</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%BD%B1%E8%A7%86/"><span class="tag">影视</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%8F%92%E4%BB%B6/"><span class="tag">插件</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"><span class="tag">服务器</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%9D%9C%E6%AF%94%E8%A7%86%E7%95%8C/"><span class="tag">杜比视界</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%B8%B8%E6%88%8F/"><span class="tag">游戏</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%9F%A5%E8%AF%86/"><span class="tag">知识</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%AC%94%E8%AE%B0/"><span class="tag">笔记</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BD%91%E7%BB%9C/"><span class="tag">网络</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%AF%84%E8%AE%BA/"><span class="tag">评论</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%BD%AF%E4%BB%B6/"><span class="tag">软件</span><span class="tag">1</span></a></div></div></div></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2023/"><span class="level-start"><span class="level-item">2023</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li></ul></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.png" alt="青橙日志 | 个人博客" height="28"></a><p class="is-size-7"><span>&copy; 2023 青橙</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/">皖ICP备2022012932号-2</a> <br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客</span></p><p class="is-size-7">用爱发电</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: true,
+        position: "bottom-right",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/mhchem.min.js" defer></script><script>window.addEventListener("load", function() {
+            document.querySelectorAll('[role="article"] > .content').forEach(function(element) {
+                renderMathInElement(element);
+            });
+        });</script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>

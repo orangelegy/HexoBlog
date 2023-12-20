@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>搭建Minecraft游戏服务器：使用MCSManager轻松实现 - 青橙日志 | 个人博客</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="青橙日志 | 个人博客"><meta name="msapplication-TileImage" content="/img/apple-touch-icon.jpg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="青橙日志 | 个人博客"><meta name="apple-mobile-web-app-status-bar-style" content="default"><link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.jpg"><link rel="apple-touch-icon" sizes="192x192" href="/img/favicon.jpg"><link rel="apple-touch-icon" sizes="128x128" href="/img/favicon.ico"><meta name="description" content="Minecraft，这款风靡全球的沙盒游戏，不仅让玩家沉浸在创造与冒险的世界中，同时也为社交与合作提供了一个理想的平台。如果你希望在自己的服务器上与朋友一同畅玩、构建梦想中的城市，那么搭建一个专属的 Minecraft 服务器将是一个极具乐趣的项目……"><meta property="og:type" content="blog"><meta property="og:title" content="青橙日志 | 个人博客"><meta property="og:url" content="https://blog.webrelay.cn/"><meta property="og:site_name" content="青橙日志"><meta property="og:description" content="Minecraft，这款风靡全球的沙盒游戏，不仅让玩家沉浸在创造与冒险的世界中，同时也为社交与合作提供了一个理想的平台。如果你希望在自己的服务器上与朋友一同畅玩、构建梦想中的城市，那么搭建一个专属的 Minecraft 服务器将是一个极具乐趣的项目……"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://blog.webrelay.cn/img/favicon.png"><meta property="article:published_time" content="2023-04-21T11:55:00.000Z"><meta property="article:modified_time" content="2023-12-20T08:45:44.173Z"><meta property="article:author" content="青橙"><meta property="article:tag" content="网络"><meta property="article:tag" content="游戏"><meta property="article:tag" content="服务器"><meta property="article:tag" content="mcsmanager"><meta property="article:tag" content="minecraft"><meta property="article:tag" content="java"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://blog.webrelay.cn/img/favicon.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.webrelay.cn/"},"headline":"青橙日志 | 个人博客","image":["https://blog.webrelay.cn/img/favicon.png"],"datePublished":"2023-04-21T11:55:00.000Z","dateModified":"2023-12-20T08:45:44.173Z","author":{"@type":"Person","name":"青橙"},"publisher":{"@type":"Organization","name":"青橙","logo":{"@type":"ImageObject","url":"https://blog.webrelay.cn/img/avatar.jpg"}},"description":"Minecraft，这款风靡全球的沙盒游戏，不仅让玩家沉浸在创造与冒险的世界中，同时也为社交与合作提供了一个理想的平台。如果你希望在自己的服务器上与朋友一同畅玩、构建梦想中的城市，那么搭建一个专属的 Minecraft 服务器将是一个极具乐趣的项目……"}</script><link rel="canonical" href="https://blog.webrelay.cn/posts/minecraft-server/"><link rel="alternate" href="/atom.xml" title="青橙日志 | 个人博客" type="application/atom+xml"><link rel="icon" href="/img/favicon.ico"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-dark.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.png" alt="青橙日志 | 个人博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/orangelegy/orangelegy.github.io"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="https://cdn.jsdelivr.net/gh/orangelegy/pic/img/wallhaven-mpox38.png" alt="搭建Minecraft游戏服务器：使用MCSManager轻松实现"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-04-21T11:55:00.000Z" title="2023/4/21 19:55:00">2023-04-21</time>发表</span><span class="level-item"><time dateTime="2023-12-20T08:45:44.173Z" title="2023/12/20 16:45:44">2023-12-20</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%95%99%E7%A8%8B/">教程</a></span><span class="level-item">12 分钟读完 (大约1813个字)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">搭建Minecraft游戏服务器：使用MCSManager轻松实现</h1><div class="content"><p>Minecraft，这款风靡全球的沙盒游戏，不仅让玩家沉浸在创造与冒险的世界中，同时也为社交与合作提供了一个理想的平台。如果你希望在自己的服务器上与朋友一同畅玩、构建梦想中的城市，那么搭建一个专属的 Minecraft 服务器将是一个极具乐趣的项目。</p>
+<p>在本教程中，我们将探讨如何使用 MCSManager 这一强大的工具来轻松搭建、管理 Minecraft 游戏服务器。MCSManager 提供了直观的用户界面和丰富的功能，使得管理和监控服务器变得异常简便。无论你是一位服务器管理员还是第一次尝试搭建自己的 Minecraft 服务器，MCSManager都能为你提供便捷而高效的解决方案。</p>
+<p><strong>本文章操作环境</strong></p>
+<p><a target="_blank" rel="noopener" href="https://badgen.net/badge/MCSManager/v8.7.0/green"><img src="https://badgen.net/badge/MCSManager/v8.7.0/green"></a> <a target="_blank" rel="noopener" href="https://badgen.net/badge/Ubuntu/v18.04.1/orange"><img src="https://badgen.net/badge/Ubuntu/v18.04.1/orange"></a> <a target="_blank" rel="noopener" href="https://badgen.net/badge/apt/v1.6.13/grey"><img src="https://badgen.net/badge/apt/v1.6.13/grey"></a> <a target="_blank" rel="noopener" href="https://badgen.net/badge/Java/v17.0.6/blue"><img src="https://badgen.net/badge/Java/v17.0.6/blue"></a> <a target="_blank" rel="noopener" href="https://badgen.net/badge/Node/v12.16.1/green"><img src="https://badgen.net/badge/Node/v12.16.1/green"></a> <a target="_blank" rel="noopener" href="https://badgen.net/badge/npm/v6.13.4/grey"><img src="https://badgen.net/badge/npm/v6.13.4/grey"></a></p>
+<blockquote>
+<p>本服务器到期前会一直开着（到期时间 2023-08-12 12:46:14），欢迎小伙伴来玩</p>
+<p>1.19.4原版生存：<strong>43.142.236.44:25565</strong></p>
+</blockquote>
+<h2 id="💰-购买服务器"><a href="#💰-购买服务器" class="headerlink" title="💰 购买服务器"></a><strong>💰 购买服务器</strong></h2><p>首先得拥有一台Linux服务器，可以在腾讯云、阿里云购买云服务器，一般新用户都会有活动，而且有时还会有免费试用活动等。具体购买步骤略。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/orangelegy/pic/img/mcsmanager1.png"></p>
+<blockquote>
+<p>由于<strong>CentOS已停止维护</strong>，Java版本最新只能安装Java 11，而 Minecraft 1.16 版本以上需要 Java 11 以上版本支持，所以我原本的CentOS云服务器重装成了Ubuntu系统，具体在<strong>控制台 - 重装系统</strong>选择系统及版本即可一键重装。</p>
+</blockquote>
+<p>具体对应版本推荐：</p>
+<table>
+<thead>
+<tr>
+<th align="left">Minecraft服务端版本号</th>
+<th align="left">JDK&#x2F;Java推荐版本</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">1.7-</td>
+<td align="left">8</td>
+</tr>
+<tr>
+<td align="left">1.8+</td>
+<td align="left">8&#x2F;11</td>
+</tr>
+<tr>
+<td align="left">1.12+ ~ 1.15+</td>
+<td align="left">8&#x2F;11</td>
+</tr>
+<tr>
+<td align="left">1.16+</td>
+<td align="left">11&#x2F;16</td>
+</tr>
+<tr>
+<td align="left">1.17+ ~ 1.18+</td>
+<td align="left">16&#x2F;17</td>
+</tr>
+</tbody></table>
+<h2 id="🚀-登录服务器"><a href="#🚀-登录服务器" class="headerlink" title="🚀 登录服务器"></a><strong>🚀 登录服务器</strong></h2><p>推荐下载 <strong><a target="_blank" rel="noopener" href="https://mobaxterm.mobatek.net/">MobaXterm</a></strong> 或 <strong><a target="_blank" rel="noopener" href="https://www.xshell.com/zh/xshell/">XShell</a></strong> 远程登录我们的服务器，我以MobaXterm为例，打开软件，点击左上角的<code>Session</code>按钮建立一个连接，选择最左边的<code>SSH</code></p>
+<p><strong>Remote host</strong> 填写我们的服务器公网IP，例如<code>43.142.236.44</code></p>
+<p><strong>Specify username</strong> Ubuntu默认用户名一般为 <code>ubuntu</code>，CentOS默认用户名一般为<code>root</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/orangelegy/pic/img/mcsmanager2.png"></p>
+<p><strong>Port</strong> 端口号22保持不变，如果服务器未开启22端口，可在<strong>服务器控制台 - 防火墙&#x2F;安全组 - 添加规则</strong> 端口填写<strong>22</strong>确认即可。</p>
+<p>创建完Session后打开，会提示让我们输入密码，输入过程中不会显示，输完了以后直接回车即可。如果忘记了密码可在服务器控制台重置密码。出现以下界面表示登录成功：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/orangelegy/pic/img/mcsmanager3.png"></p>
+<h2 id="🔧-服务器配置"><a href="#🔧-服务器配置" class="headerlink" title="🔧 服务器配置"></a><strong>🔧 服务器配置</strong></h2><p>我们先来到我们的云服务器控制台，找到<strong>防火墙&#x2F;安全组</strong>，点击<strong>添加规则</strong>，依次添加<code>23333</code>，<code>24444</code>，<code>25565</code>三个端口，来源默认为0.0.0.0，如需手动填写请手动填写。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/orangelegy/pic/img/mcsmanager4.png"></p>
+<p>回到MobaXterm，依次输入以下指令：</p>
+<ul>
+<li>Ubuntu系统</li>
+</ul>
+<p>切换到管理员权限（$为普通用户权限，#为管理员权限）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo bash</span><br></pre></td></tr></table></figure>
+
+<p>更新软件包</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt update</span><br></pre></td></tr></table></figure>
+
+<p>安装Java环境</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install openjdk-17-jre</span><br></pre></td></tr></table></figure>
+
+<p>查看Java版本（确认安装成功）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -version</span><br></pre></td></tr></table></figure>
+
+<p>安装Node</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install nodejs</span><br></pre></td></tr></table></figure>
+
+<p>安装npm</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install npm</span><br></pre></td></tr></table></figure>
+
+<h2 id="🧩-安装MCSManager"><a href="#🧩-安装MCSManager" class="headerlink" title="🧩 安装MCSManager"></a>🧩 <strong>安装MCSManager</strong></h2><p>一行命令快速安装</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -qO- https://gitee.com/mcsmanager/script/raw/master/setup.sh</span><br></pre></td></tr></table></figure>
+
+<p>开启MCSManager中文管理面板</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl start mcsm</span><br><span class="line">systemctl status mcsm</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/orangelegy/pic/img/mcsmanager5.png"></p>
+<p>记住默认管理用户为<code>#master</code>，密码<code>123456</code></p>
+<h2 id="🔑-登录MCSManager"><a href="#🔑-登录MCSManager" class="headerlink" title="🔑 登录MCSManager"></a>🔑 <strong>登录MCSManager</strong></h2><p>在我们自己电脑的浏览器地址栏中输入<code>云服务器公网IP:23333</code>即可打开登录界面，例如<code>43.142.236.44:23333</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/orangelegy/pic/img/mcsmanager6.png"></p>
+<p>输入默认的账号和密码即可登录，登录完成后请<strong>尽快修改密码</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/orangelegy/pic/img/mcsmanager7.png"></p>
+<h2 id="💡-配置Minecraft服务端"><a href="#💡-配置Minecraft服务端" class="headerlink" title="💡 配置Minecraft服务端"></a>💡 配置Minecraft服务端</h2><ul>
+<li>下载Minecraft Java版服务端（server.jar)</li>
+</ul>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.minecraft.net/zh-hans/download/server"><strong>Minecraft官网下载</strong></a>（只能下载最新版本）</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/orangelegy/pic/img/mcsmanager8.png"></p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://mcversions.net/"><strong>MCVersion.net</strong></a> （可下载各个版本的服务端及客户端）</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/orangelegy/pic/img/mcsmanager9.png"></p>
+<ul>
+<li>创建实例</li>
+</ul>
+<p>回到MCSManager管理面板，点击 <strong>服务端管理 - 创建新实例应用 - 引导创建（推荐）</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/orangelegy/pic/img/mcsmanager10.png"></p>
+<p>填写实例名称（只能用字母&#x2F;数字&#x2F;下划线！），项目位置不用填（默认自动），点击下一步，上传刚刚下载的服务端程序<code>server.jar</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/orangelegy/pic/img/mcsmanager11.png"></p>
+<p>点击下一步，填写相关参数，全部默认，选择确认无误，立刻创建</p>
+<p><img src="https://cdn.jsdelivr.net/gh/orangelegy/pic/img/mcsmanager12.png"></p>
+<ul>
+<li>开启游戏服务器</li>
+</ul>
+<p>点击刚刚创建的实例，点击左边的 <strong>服务端操作 - 开启服务器</strong> 即可运行游戏服务端。<strong>启动设置 - 服务器自启</strong>推荐打开</p>
+<p><img src="https://cdn.jsdelivr.net/gh/orangelegy/pic/img/mcsmanager13.png"></p>
+<ul>
+<li>配置游戏服务器</li>
+</ul>
+<p>点击 <strong>配置文件 - Server.Properties</strong> 即可配置我们的游戏服务器参数，例如游戏模式、地图种子、正版验证、极限模式、玩家互伤等等</p>
+<p><img src="https://cdn.jsdelivr.net/gh/orangelegy/pic/img/mcsmanager14.png"></p>
+<p>再打开服务端命令控制台，输入 <code>op 玩家id</code>，给玩家管理员权限，例如<code>op cyan___orange</code></p>
+<blockquote>
+<p>更多服务端指令请参考：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/547280217">Minecraft：服务器命令大全 - EDER笑笑的文章 - 知乎</a></p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/orangelegy/pic/img/mcsmanager15.png"></p>
+<h2 id="🕹️-登录Minecraft服务器"><a href="#🕹️-登录Minecraft服务器" class="headerlink" title="🕹️ 登录Minecraft服务器"></a>🕹️ <strong>登录Minecraft服务器</strong></h2><p>使用对应的游戏版本启动，我用的服务端是最新版本1.19.4版本，那么我的游戏版本也必须是1.19.4，如果使用离线账号登录，那么必须要在服务器配置文件<code>Server.Properties</code>中关闭正版验证</p>
+<p><img src="https://cdn.jsdelivr.net/gh/orangelegy/pic/img/mcsmanager16.png"></p>
+<p>进入游戏后，在Minecraft中点击 <strong>多人游戏 - 添加服务器</strong></p>
+<p><strong>服务器名称</strong>：随意</p>
+<p><strong>服务器地址</strong>：<code>服务器公网IP:25565</code>，例如<code>43.142.236.44:25565</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/orangelegy/pic/img/mcsmanager17.png"></p>
+<p>点击完成后即可添加我们的服务器，回到服务器列表就可以看到我们的服务器，后面显示绿色即可连接，让我们加入游戏吧！</p>
+<p><img src="https://cdn.jsdelivr.net/gh/orangelegy/pic/img/mcsmanager18.png"></p>
+<h2 id="🎉-成功进入游戏-🥳"><a href="#🎉-成功进入游戏-🥳" class="headerlink" title="🎉 成功进入游戏 🥳"></a><strong>🎉 成功进入游戏 🥳</strong></h2><p><img src="https://cdn.jsdelivr.net/gh/orangelegy/pic/img/mcsmanager19.png"></p>
+<hr>
+<blockquote>
+<p>相关链接：</p>
+<p><a target="_blank" rel="noopener" href="https://litenpanjun.github.io/MCSManager8/">MCSManager | Minecraft 中文管理面板</a></p>
+<p><a target="_blank" rel="noopener" href="https://mobaxterm.mobatek.net/">MobaXterm free Xserver and tabbed SSH client for Windows</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.xshell.com/zh/xshell/">XSHELL - NetSarang Website</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.minecraft.net/zh-hans/download/server">Download server for Minecraft | Minecraft</a></p>
+</blockquote>
+</div><div class="article-licensing box"><div class="licensing-title"><p>搭建Minecraft游戏服务器：使用MCSManager轻松实现</p><p><a href="https://blog.webrelay.cn/posts/minecraft-server/">https://blog.webrelay.cn/posts/minecraft-server/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>青橙</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2023-04-21</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2023-12-20</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/%E7%BD%91%E7%BB%9C/">网络</a><a class="link-muted mr-2" rel="tag" href="/tags/%E6%B8%B8%E6%88%8F/">游戏</a><a class="link-muted mr-2" rel="tag" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">服务器</a><a class="link-muted mr-2" rel="tag" href="/tags/mcsmanager/">mcsmanager</a><a class="link-muted mr-2" rel="tag" href="/tags/minecraft/">minecraft</a><a class="link-muted mr-2" rel="tag" href="/tags/java/">java</a></div><div class="sharethis-inline-share-buttons"></div><script src="https://platform-api.sharethis.com/js/sharethis.js#property=65829b525cb4e300199aab28&amp;product=sop" defer></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="/img/alipay.jpg" alt="支付宝"></span></a><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/img/wechatpay.png" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/posts/web-font/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">网页设计中的字体艺术：解密字体选择与Web字体优化</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/posts/giscus/"><span class="level-item">Hexo博客教程：使用giscus为网页添加评论系统通用方法</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="content twikoo" id="twikoo"></div><script src="https://cdn.jsdelivr.net/npm/twikoo@1.6.6/dist/twikoo.all.min.js"></script><script>twikoo.init({
+            envId: 'https://blog.webrelay.cn/',
+            region: "ap-guangzhou",
+            lang: "zh-CN",
+        });</script></div></div></div><!--!--><div class="column column-right is-4-tablet is-4-desktop is-4-widescreen  order-3 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#💰-购买服务器"><span class="level-left"><span class="level-item">1</span><span class="level-item">💰 购买服务器</span></span></a></li><li><a class="level is-mobile" href="#🚀-登录服务器"><span class="level-left"><span class="level-item">2</span><span class="level-item">🚀 登录服务器</span></span></a></li><li><a class="level is-mobile" href="#🔧-服务器配置"><span class="level-left"><span class="level-item">3</span><span class="level-item">🔧 服务器配置</span></span></a></li><li><a class="level is-mobile" href="#🧩-安装MCSManager"><span class="level-left"><span class="level-item">4</span><span class="level-item">🧩 安装MCSManager</span></span></a></li><li><a class="level is-mobile" href="#🔑-登录MCSManager"><span class="level-left"><span class="level-item">5</span><span class="level-item">🔑 登录MCSManager</span></span></a></li><li><a class="level is-mobile" href="#💡-配置Minecraft服务端"><span class="level-left"><span class="level-item">6</span><span class="level-item">💡 配置Minecraft服务端</span></span></a></li><li><a class="level is-mobile" href="#🕹️-登录Minecraft服务器"><span class="level-left"><span class="level-item">7</span><span class="level-item">🕹️ 登录Minecraft服务器</span></span></a></li><li><a class="level is-mobile" href="#🎉-成功进入游戏-🥳"><span class="level-left"><span class="level-item">8</span><span class="level-item">🎉 成功进入游戏 🥳</span></span></a></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-12-16T15:26:50.000Z">2023-12-16</time></p><p class="title"><a href="/posts/potplayer-dolby-vision/">享受高质量画面：使用PotPlayer播放杜比视界影片的简易指南</a></p><p class="categories"><a href="/categories/%E6%95%99%E7%A8%8B/">教程</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-11-29T12:37:21.000Z">2023-11-29</time></p><p class="title"><a href="/posts/alist/">畅享4K：PotPlayer+Alist免费在线观看阿里云盘影片资源</a></p><p class="categories"><a href="/categories/%E6%95%99%E7%A8%8B/">教程</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-11-23T11:20:59.000Z">2023-11-23</time></p><p class="title"><a href="/posts/web-font/">网页设计中的字体艺术：解密字体选择与Web字体优化</a></p><p class="categories"><a href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-04-21T11:55:00.000Z">2023-04-21</time></p><p class="title"><a href="/posts/minecraft-server/">搭建Minecraft游戏服务器：使用MCSManager轻松实现</a></p><p class="categories"><a href="/categories/%E6%95%99%E7%A8%8B/">教程</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-04-16T11:51:52.000Z">2023-04-16</time></p><p class="title"><a href="/posts/giscus/">Hexo博客教程：使用giscus为网页添加评论系统通用方法</a></p><p class="categories"><a href="/categories/%E6%95%99%E7%A8%8B/">教程</a></p></div></article></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/%E5%89%8D%E7%AB%AF/"><span class="level-start"><span class="level-item">前端</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%95%99%E7%A8%8B/"><span class="level-start"><span class="level-item">教程</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Alist/"><span class="tag">Alist</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/CSS/"><span class="tag">CSS</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Hexo/"><span class="tag">Hexo</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/LAVFilters/"><span class="tag">LAVFilters</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/MPC-Video-Renderer/"><span class="tag">MPC Video Renderer</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/PotPlayer/"><span class="tag">PotPlayer</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/WebDAV/"><span class="tag">WebDAV</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/giscus/"><span class="tag">giscus</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/java/"><span class="tag">java</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/mcsmanager/"><span class="tag">mcsmanager</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/minecraft/"><span class="tag">minecraft</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%8D%9A%E5%AE%A2/"><span class="tag">博客</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%AD%97%E4%BD%93/"><span class="tag">字体</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%BD%B1%E8%A7%86/"><span class="tag">影视</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%8F%92%E4%BB%B6/"><span class="tag">插件</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"><span class="tag">服务器</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%9D%9C%E6%AF%94%E8%A7%86%E7%95%8C/"><span class="tag">杜比视界</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%B8%B8%E6%88%8F/"><span class="tag">游戏</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%9F%A5%E8%AF%86/"><span class="tag">知识</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%AC%94%E8%AE%B0/"><span class="tag">笔记</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BD%91%E7%BB%9C/"><span class="tag">网络</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%AF%84%E8%AE%BA/"><span class="tag">评论</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%BD%AF%E4%BB%B6/"><span class="tag">软件</span><span class="tag">1</span></a></div></div></div></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2023/"><span class="level-start"><span class="level-item">2023</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li></ul></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.png" alt="青橙日志 | 个人博客" height="28"></a><p class="is-size-7"><span>&copy; 2023 青橙</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/">皖ICP备2022012932号-2</a> <br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客</span></p><p class="is-size-7">用爱发电</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: true,
+        position: "bottom-right",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/mhchem.min.js" defer></script><script>window.addEventListener("load", function() {
+            document.querySelectorAll('[role="article"] > .content').forEach(function(element) {
+                renderMathInElement(element);
+            });
+        });</script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
