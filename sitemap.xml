@@ -2,7 +2,52 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://blog.webrelay.cn/about/index.html</loc>
+    <loc>https://hexo.webrelay.cn/posts/giscus/</loc>
+    
+    <lastmod>2024-01-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hexo.webrelay.cn/posts/potplayer-dolby-vision/</loc>
+    
+    <lastmod>2024-01-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hexo.webrelay.cn/posts/web-font/</loc>
+    
+    <lastmod>2024-01-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hexo.webrelay.cn/posts/minecraft-server/</loc>
+    
+    <lastmod>2024-01-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hexo.webrelay.cn/posts/alist/</loc>
+    
+    <lastmod>2024-01-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hexo.webrelay.cn/about/index.html</loc>
     
     <lastmod>2023-12-21</lastmod>
     
@@ -10,217 +55,172 @@
     <priority>0.6</priority>
   </url>
   
-  <url>
-    <loc>https://blog.webrelay.cn/posts/giscus/</loc>
-    
-    <lastmod>2023-12-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.webrelay.cn/posts/alist/</loc>
-    
-    <lastmod>2023-12-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.webrelay.cn/posts/minecraft-server/</loc>
-    
-    <lastmod>2023-12-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.webrelay.cn/posts/potplayer-dolby-vision/</loc>
-    
-    <lastmod>2023-12-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.webrelay.cn/posts/web-font/</loc>
-    
-    <lastmod>2023-12-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
 
   <url>
-    <loc>https://blog.webrelay.cn/</loc>
-    <lastmod>2023-12-22</lastmod>
+    <loc>https://hexo.webrelay.cn/</loc>
+    <lastmod>2024-01-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
-    <loc>https://blog.webrelay.cn/tags/%E7%BD%91%E7%BB%9C/</loc>
-    <lastmod>2023-12-22</lastmod>
+    <loc>https://hexo.webrelay.cn/tags/%E7%BD%91%E7%BB%9C/</loc>
+    <lastmod>2024-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.webrelay.cn/tags/WebDAV/</loc>
-    <lastmod>2023-12-22</lastmod>
+    <loc>https://hexo.webrelay.cn/tags/WebDAV/</loc>
+    <lastmod>2024-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.webrelay.cn/tags/Alist/</loc>
-    <lastmod>2023-12-22</lastmod>
+    <loc>https://hexo.webrelay.cn/tags/Alist/</loc>
+    <lastmod>2024-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.webrelay.cn/tags/%E5%BD%B1%E8%A7%86/</loc>
-    <lastmod>2023-12-22</lastmod>
+    <loc>https://hexo.webrelay.cn/tags/%E5%BD%B1%E8%A7%86/</loc>
+    <lastmod>2024-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.webrelay.cn/tags/%E8%BD%AF%E4%BB%B6/</loc>
-    <lastmod>2023-12-22</lastmod>
+    <loc>https://hexo.webrelay.cn/tags/%E8%BD%AF%E4%BB%B6/</loc>
+    <lastmod>2024-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.webrelay.cn/tags/PotPlayer/</loc>
-    <lastmod>2023-12-22</lastmod>
+    <loc>https://hexo.webrelay.cn/tags/PotPlayer/</loc>
+    <lastmod>2024-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.webrelay.cn/tags/Hexo/</loc>
-    <lastmod>2023-12-22</lastmod>
+    <loc>https://hexo.webrelay.cn/tags/Hexo/</loc>
+    <lastmod>2024-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.webrelay.cn/tags/%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2023-12-22</lastmod>
+    <loc>https://hexo.webrelay.cn/tags/%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2024-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.webrelay.cn/tags/%E8%AF%84%E8%AE%BA/</loc>
-    <lastmod>2023-12-22</lastmod>
+    <loc>https://hexo.webrelay.cn/tags/%E8%AF%84%E8%AE%BA/</loc>
+    <lastmod>2024-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.webrelay.cn/tags/%E6%8F%92%E4%BB%B6/</loc>
-    <lastmod>2023-12-22</lastmod>
+    <loc>https://hexo.webrelay.cn/tags/%E6%8F%92%E4%BB%B6/</loc>
+    <lastmod>2024-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.webrelay.cn/tags/giscus/</loc>
-    <lastmod>2023-12-22</lastmod>
+    <loc>https://hexo.webrelay.cn/tags/giscus/</loc>
+    <lastmod>2024-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.webrelay.cn/tags/%E6%B8%B8%E6%88%8F/</loc>
-    <lastmod>2023-12-22</lastmod>
+    <loc>https://hexo.webrelay.cn/tags/%E6%B8%B8%E6%88%8F/</loc>
+    <lastmod>2024-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.webrelay.cn/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
-    <lastmod>2023-12-22</lastmod>
+    <loc>https://hexo.webrelay.cn/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
+    <lastmod>2024-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.webrelay.cn/tags/mcsmanager/</loc>
-    <lastmod>2023-12-22</lastmod>
+    <loc>https://hexo.webrelay.cn/tags/mcsmanager/</loc>
+    <lastmod>2024-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.webrelay.cn/tags/minecraft/</loc>
-    <lastmod>2023-12-22</lastmod>
+    <loc>https://hexo.webrelay.cn/tags/minecraft/</loc>
+    <lastmod>2024-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.webrelay.cn/tags/java/</loc>
-    <lastmod>2023-12-22</lastmod>
+    <loc>https://hexo.webrelay.cn/tags/java/</loc>
+    <lastmod>2024-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.webrelay.cn/tags/%E6%9D%9C%E6%AF%94%E8%A7%86%E7%95%8C/</loc>
-    <lastmod>2023-12-22</lastmod>
+    <loc>https://hexo.webrelay.cn/tags/%E6%9D%9C%E6%AF%94%E8%A7%86%E7%95%8C/</loc>
+    <lastmod>2024-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.webrelay.cn/tags/MPC-Video-Renderer/</loc>
-    <lastmod>2023-12-22</lastmod>
+    <loc>https://hexo.webrelay.cn/tags/MPC-Video-Renderer/</loc>
+    <lastmod>2024-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.webrelay.cn/tags/LAVFilters/</loc>
-    <lastmod>2023-12-22</lastmod>
+    <loc>https://hexo.webrelay.cn/tags/LAVFilters/</loc>
+    <lastmod>2024-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.webrelay.cn/tags/%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2023-12-22</lastmod>
+    <loc>https://hexo.webrelay.cn/tags/%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2024-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.webrelay.cn/tags/CSS/</loc>
-    <lastmod>2023-12-22</lastmod>
+    <loc>https://hexo.webrelay.cn/tags/CSS/</loc>
+    <lastmod>2024-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.webrelay.cn/tags/%E5%AD%97%E4%BD%93/</loc>
-    <lastmod>2023-12-22</lastmod>
+    <loc>https://hexo.webrelay.cn/tags/%E5%AD%97%E4%BD%93/</loc>
+    <lastmod>2024-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.webrelay.cn/tags/%E7%9F%A5%E8%AF%86/</loc>
-    <lastmod>2023-12-22</lastmod>
+    <loc>https://hexo.webrelay.cn/tags/%E7%9F%A5%E8%AF%86/</loc>
+    <lastmod>2024-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -228,15 +228,15 @@
 
   
   <url>
-    <loc>https://blog.webrelay.cn/categories/%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2023-12-22</lastmod>
+    <loc>https://hexo.webrelay.cn/categories/%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2024-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.webrelay.cn/categories/%E5%89%8D%E7%AB%AF/</loc>
-    <lastmod>2023-12-22</lastmod>
+    <loc>https://hexo.webrelay.cn/categories/%E5%89%8D%E7%AB%AF/</loc>
+    <lastmod>2024-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
